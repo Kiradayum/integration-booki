@@ -14,6 +14,9 @@
 }
 
 body {
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
 	margin: 0;
 }
 
@@ -55,6 +58,7 @@ h4 {
 header {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 35px;
 }
 
 .hlogo {
@@ -169,7 +173,12 @@ form {
 	background-color: var(--filter-bg-color);
 }
 
-.filter-head {
+.filter-button-group {
+	display: flex;
+	flex-direction: row;
+}
+
+.filter-bar h3 {
 	margin: 0 15px 0 0;
 }
 
@@ -270,11 +279,10 @@ form {
 	display: flex;
 	flex-direction: column;
 	padding: 30px;
-	gap: 30px;
+	gap: 20px;
 	background-color: var(--main-bg-color);
 	border-radius: 15px;
-	width: 30%;
-	justify-content: space-between;
+	flex: 1;
 }
 
 .populaire-title {
@@ -287,11 +295,16 @@ form {
 	height: 20px;
 }
 
+.box-populaire-group {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	gap: 20px;
+}
+
 .box-populaire {
 	display: flex;
-	position: relative;
-	height: 100%;
-	width: 100%;
+	flex: 1;
 	border-radius: 20px;
 	background: white;
 	box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
@@ -302,6 +315,8 @@ form {
 	align-content: flex-start;
 	overflow: hidden;
 	padding: 10px 5px 5px 15px;
+	flex: 1;
+	position: relative;
 }
 
 .box-populaire-left {
@@ -309,27 +324,30 @@ form {
 	overflow: hidden;
 	border-radius: 20px 0px 0px 20px;
 	border: 5px solid white;
-	width: 30%;
+	flex: 1;
 }
 
 .box-populaire-left .img-populaire {
 	position: absolute;
-	max-height: 100%;
-	min-width: 100%;
+	width: 100%;
+	height: 100%;
 	left: 50%;
 	top: 50%;
     transform: translate(-50%, -50%);
+	object-fit: cover;
 }
 
 .box-populaire-item p {
+	font-size: 14px;
+	font-weight: 400;
 	padding: 8px 0;
 	margin: 0;
 }
 
-.box-populaire .stars {
+.box-populaire-item-stars {
+	padding: 5px 0;
 	position: absolute;
 	bottom: 0;
-	padding: 5px 0;
 }
 
 /* Activités à Marseille */
@@ -366,7 +384,7 @@ form {
 .box-activites-item .img-activites {
     position: absolute;
 	min-width: 100%;
-    min-height: 100%;
+    height: 100%;
 	left: 50%;
 	top: 50%;
     transform: translate(-50%, -50%);
@@ -417,4 +435,60 @@ footer a {
 	flex: 1;
 	padding: 20px;
 	gap: 15px;
+}
+
+/* Affichage Tablette */
+
+@media (max-width: 1024px) {
+
+	/* Filter*/
+
+	.filter-bar {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+	}
+
+	.filter-bar .filter-button-group {
+		flex-direction: row;
+	}
+
+	/* Hebergements */
+
+	#hebergements {
+		flex-direction: column;
+	}
+
+	/* Populaires */
+
+	#populaire {
+		width: 100%;
+	}
+
+	.box-populaire-group {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.box-populaire-left {
+		flex: none;
+		width: 33%;
+		height: 150px;
+	}
+
+	/* Activités */
+
+	.box-activites-item {
+		height: 200px;
+	}
+
+	.box-activites-item .img-activites {
+		height: 100%;
+	}
+}
+
+/* Affichage Téléphone */
+
+@media (max-width: 767.98px) {
+    
 }

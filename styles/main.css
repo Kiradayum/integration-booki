@@ -59,6 +59,18 @@ h4 {
 	font-weight: 700;
 }
 
+.fa-solid {
+	color: var(--main-color);
+}
+
+.grey {
+	color: var(--main-bg-color);
+}
+
+.grey:hover {
+	color: var(--main-color);
+}
+
 /* Header */
 
 header {
@@ -137,6 +149,20 @@ form {
 	align-items: center;
 }
 
+.iconmaps {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	width: 50px;
+	background-color: var(--main-bg-color);
+	border-radius: 15px 0 0 15px;
+}
+
+.fa-location-dot {
+	color: black;
+}
+
 .search-bar {
 	border-top: 2px solid var(--main-bg-color);
 	border-bottom: 2px solid var(--main-bg-color);
@@ -162,7 +188,7 @@ form {
 	cursor: pointer;
 }
 
-.loupe {
+form .fa-magnifying-glass {
 	display: none;
 }
 
@@ -214,12 +240,15 @@ form {
 }
 
 .info-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	border: 1px solid var(--highlight);
-	width: 24px;
-	height: 24px;
-	border-radius: 15px;
-	padding: 5px;
+	width: 22px;
+	height: 22px;
+	border-radius: 25px;
 }
+
 .infos p {
 	font-size: 16px;
 	font-weight: 400;
@@ -247,14 +276,10 @@ form {
 	height: 100%;
 }
 
-.container-hebergements h3 {
-	cursor: pointer;
-}
-
 .library-hebergements {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	gap: 30px;
 }
 
@@ -280,7 +305,7 @@ form {
 	overflow: hidden;
 	border-radius: 20px 20px 0px 0px;
 	border: 5px solid white;
-	height: 150px;
+	height: 125px;
 	margin-bottom: 4px;
 }
 
@@ -323,10 +348,6 @@ form {
 	align-items: center;
 }
 
-.graph-populaire {
-	height: 20px;
-}
-
 .box-populaire-group {
 	display: flex;
 	flex-direction: column;
@@ -342,10 +363,6 @@ form {
 	border-radius: 20px;
 	background: white;
 	box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
-}
-
-.box-populaire:hover {
-	cursor: pointer;
 }
 
 .box-populaire-content {
@@ -611,8 +628,18 @@ footer a:hover {
 		padding: 0 20px;
 	}
 
+	.search {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.iconmaps {
+		min-width: 50px;
+	}
+
 	.search-bar {
-		width: 66vw; /* Solution temporaire */
+		width: 100%;
+		flex-grow: 1;
 	}
 
 	.search-submit {
@@ -622,12 +649,15 @@ footer a:hover {
 		border-radius: 15px;
 		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 		margin-left: -15px;
+		margin-right: 20px;
 	}
 
-	.loupe {
+	form .fa-magnifying-glass {
 		display: block;
-		margin-left: -33px;
+		margin-left: -52px;
+		margin-right: 20px;
 		pointer-events: none;
+		color: white;
 	}
 
 	/*Filter*/
